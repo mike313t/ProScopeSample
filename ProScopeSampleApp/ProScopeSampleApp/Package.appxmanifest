@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" IgnorableNamespaces="uap mp">
+  <Identity Name="66916ae7-56cd-43d6-8509-2932bc0f2031" Publisher="CN=mtovbin" Version="1.0.0.0" />
+  <mp:PhoneIdentity PhoneProductId="66916ae7-56cd-43d6-8509-2932bc0f2031" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
+  <Properties>
+    <DisplayName>ProScopeSampleApp</DisplayName>
+    <PublisherDisplayName>mtovbin</PublisherDisplayName>
+    <Logo>Assets\StoreLogo.png</Logo>
+  </Properties>
+  <Dependencies>
+    <TargetDeviceFamily Name="Windows.Universal" MinVersion="10.0.0.0" MaxVersionTested="10.0.0.0" />
+  </Dependencies>
+  <Resources>
+    <Resource Language="x-generate" />
+  </Resources>
+  <Applications>
+    <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="ProScopeSampleApp.App">
+      <uap:VisualElements DisplayName="ProScopeSampleApp" Square150x150Logo="Assets\Square150x150Logo.png" Square44x44Logo="Assets\Square44x44Logo.png" Description="ProScopeSampleApp" BackgroundColor="transparent">
+        <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png">
+        </uap:DefaultTile>
+        <uap:SplashScreen Image="Assets\SplashScreen.png" />
+      </uap:VisualElements>
+    </Application>
+  </Applications>
+  <Capabilities>
+    <Capability Name="internetClient" />
+    <Capability Name="privateNetworkClientServer" />
+    <uap:Capability Name="videosLibrary" />
+    <uap:Capability Name="userAccountInformation" />
+    <!-- Allows access to Bodelin ProScope -->
+    <DeviceCapability Name="usb">
+      <Device Id="vidpid:19ab 2000">
+        <Function Type="name:vendorSpecific"/>
+      </Device>
+    </DeviceCapability>
+    <DeviceCapability Name="webcam" />
+    <DeviceCapability Name="microphone" />
+    <DeviceCapability Name="humaninterfacedevice">
+      <Device Id="vidpid:19ab 1000">
+        <Function Type="usage:FFA0 0001" />
+      </Device>
+      <Device Id="vidpid:19ab 1020">
+        <Function Type="usage:FFA0 0001" />
+      </Device>
+    </DeviceCapability>
+  </Capabilities>
+</Package>
